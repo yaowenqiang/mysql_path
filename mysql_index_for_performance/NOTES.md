@@ -64,3 +64,40 @@
   + Secondary index will contain the pointer to clustered index
 + If there is no clustered index on the table
   + Secondeary index will contain the row pointer
+
+## Hash Index
+
++ Hash index is built on a hash table
++ Increases performance for exact lookups
++ For each row a hash code is generated
+  + Generally different keys generate different hash code
+  + Stores hash codes in index with pointer to each row in a hash table
+  + If multiple values hase same hash code, it will also contain their row pointers in linked list
++ Memory sotrage engine in MySQL supports explicit hash tables
++ Very fast and effective as it reside in Memory
+
+
+## Limitation of hash Index
+
++ As hash index does not contain original data it is not effective in 
+  + Sorting
+  + No PartialMatching
++ Only support Equal To ('=') operator
++ Multiple values with same hash code, it will result in slow performance
+  + Storage engine will follow each row pointer in the linked list and compare the value to the lookup values
+  + Slow maintaince
+
+
+## Adaptive hash index
+
++ InnoDB storeage engine supports  adaptive hash index
++ This is automatic process and no control/configuration
+  + Possible to disable
++ Hash Indexes are built in memory on the top of frequently used B-tree indexes
++ Adaptive Hash index gives B-Tree indexes very fast hashed lookups for improved performance
+
+
+> Note: You can simulate Hash Indexws on the unsupported storage engine
+
++
+
