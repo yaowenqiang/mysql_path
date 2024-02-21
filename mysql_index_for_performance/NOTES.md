@@ -99,5 +99,27 @@
 
 > Note: You can simulate Hash Indexws on the unsupported storage engine
 
-+
+## Other indexes
+
++ Spatial indexes
+  + MyISAM supports Spatial indexes+
+  + MySQL GIS supports is not exhaustive
++ Full Text indexes
+  + Just like search engines
+  + Finds keywords in the text
+  + They ARE MATCH against operators (not WHERE operation)
++ Other Types
++ + TokuDB - FractalTree indexes
++ ScaleDB - Patrica tries
++ InfiniDB -= SpecialLogic
+
+
+## Effectiveness of Index
+
++ Find rows matching a WHERE clause
++ Eliminate rows by opting for the most SELECTIVE index
++ Retrieve rows from other table where joining multiple tables
++ Find MIN() or MAX() value
++ Sort or Group Table
++ Reduce I/O bottleneck by using Covering index
 
