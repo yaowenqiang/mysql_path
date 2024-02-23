@@ -123,3 +123,22 @@
 + Sort or Group Table
 + Reduce I/O bottleneck by using Covering index
 
+
+## get index for tables
+
+> show index from  table from database;
+> show index from table;
+> select * from information-schema.statistics wehre table_name = 'tablename'
+
+## create index on table
+> create index indexName on table(columnname1)
+> create index indexName on table(columnname1 desc) # desc order index will be changed to asc
+
+
+## index merge
+
+> select title, rental_duration, length from file where rental_duration = 0 OR length = 100;
+
+# mysql convert or condition to union
+
+
