@@ -141,4 +141,19 @@
 
 # mysql convert or condition to union
 
+## force, ignore , use
+
+> select title, rental_duration, length from film force index(idx_film_length_rental_duration)
+> select title, rental_duration, length from film use index(idx_film_length_rental_duration)
+> select title, rental_duration, length from film ignore index(idx_film_length_rental_duration)
+
+## MySQL Query Optimizer
+
+| MySQL Query Optimizer follows cost based algorithm
+  + The main cost metric is data accessed by the query
++ Two different API calls to decide the selection of index for queries
+  + records_in_range() - returns number of recoreds in range end points
+  + info() - returns various types of data and statistics
+
+
 
