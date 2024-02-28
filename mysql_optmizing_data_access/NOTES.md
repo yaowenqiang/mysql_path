@@ -36,6 +36,40 @@ Client -> Query Cache -> Parser -> Preprocessor -> Query Optimizer -> Query Exec
 + Fastest executing query vs Must resource optimized query
 + Cost of stored routines(SP, Function), are not  often considered in the cost of operation
 
+
+## Query Optimizer
+
++ Query Optimizer is a Cost Based Optimizer
+  + Selects the path using the least resources
++ MySQL execution plan is tree of unstructions
++ Use EXPLAN EXTENDED
++ Static Optimization
+  + Inspection of parse tree
++ Dynamic Optimization
+  + Contextual inspection of various factors of query
+
+## Maximizing Query Optimizer Performance
+
++ Optimizing Data Access
++ Understanding Query Optimization
++ Query Re-write
+
+## Understanding  Query Stats
+
+> SHOW FULL PROCESSLIST
+
++ Sleep
++ Query
++ Analyzing and statistics
++ Copying to tmp table
++ Sorting result
++ Sending data
++
+
+
+
+
+
 ## use index 
 
 > explain  select * from film where length < 100;
