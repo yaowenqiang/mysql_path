@@ -64,6 +64,28 @@ Client -> Query Cache -> Parser -> Preprocessor -> Query Optimizer -> Query Exec
 + Copying to tmp table
 + Sorting result
 + Sending data
+
+## Understanding EXPLAIN Command
+
+Explain select query
+
++ id
++ select_type
++ table
++ type
++ possible_keys
++ key
++ key_len
++ ref
++ rows
+
+> explain extended select * from actor inner join film_actor on actor.actor_id = film_actor.actor_id;+
+
+> the extended keyword does not exists in mysql 8.0
+
+
+> MySql general thread stats
+
 +
 
 
