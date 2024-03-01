@@ -84,9 +84,37 @@ Explain select query
 > the extended keyword does not exists in mysql 8.0
 
 
+> show status like 'Last_Query_Cost';
+>
+
 > MySql general thread stats
 
-+
+## Table order in join condition
+
+
+```sql
+select * from film f
+inner join film_actor fa on f.film_id = fa.film_id
+inner join film_category fc on f.film_id = fc.film_id
+where  f.film_id = 10;
+
+```
+> 
+```sql
+select * from film f
+inner join film_category fc on f.film_id = fc.film_id
+inner join film_actor fa on f.film_id = fa.film_id
+where  f.film_id = 10;
+
+```
+
+```sql
+select * from film_category fc
+inner join film_actor fa on fa.film_id = fc.film_id
+inner join film f on f.film_id = fa.film_id
+where  f.film_id = 10;
+
+```
 
 
 
