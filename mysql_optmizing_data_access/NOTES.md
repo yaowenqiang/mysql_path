@@ -116,6 +116,26 @@ where  f.film_id = 10;
 
 ```
 
+## Outer join  table order performance
+
+```sql
+select * from film f
+                       left join film_actor fa on f.film_id = fa.film_id
+                       left join film_category fc on f.film_id = fc.film_id
+     where  f.film_id = 10;
+
+select * from film f
+                       left join film_category fc on f.film_id = fc.film_id
+                       left join film_actor fa on f.film_id = fa.film_id
+     where  f.film_id = 10;
+
+select * from film_category fc
+                  left join film_actor fa on fc.film_id = fa.film_id
+                  left join film f on f.film_id = fa.film_id
+where  f.film_id = 10;
+
+```
+
 
 
 
