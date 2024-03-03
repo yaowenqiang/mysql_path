@@ -136,7 +136,29 @@ where  f.film_id = 10;
 
 ```
 
+> correlated-subquery
 
+
+```sql
+elect * from film f
+where f.film_id in (
+    select i.film_id from inventory i
+                         where inventory_id < 555
+);
+
+select * from film f where exists(
+    select i.film_id from inventory i where inventory_id < 555
+                                        and i.film_id = f.film_id
+                                        
+);
+
+select f.* from film f
+inner join inventory i on i.film_id = f.film_id
+where inventory_id < 555;
+
+-- join works better
+
+```
 
 
 
@@ -153,4 +175,5 @@ where  f.film_id = 10;
 ## use index 
 
 > select film_id, length from film where length < 100;
+
 
