@@ -138,9 +138,9 @@ where  f.film_id = 10;
 
 > correlated-subquery
 
-
+> https://dev.mysql.com/doc/refman/8.0/en/subquery-optimization-with-exists.html
 ```sql
-elect * from film f
+select * from film f
 where f.film_id in (
     select i.film_id from inventory i
                          where inventory_id < 555
