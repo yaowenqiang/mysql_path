@@ -75,3 +75,9 @@ drop procedure SubQ;
 drop procedure ExistQ;
 drop procedure JoinQ;
 
+select min(film_id) from film where length = 100;
+select film_id from film where length = 100 order by film_id limit 1;
+
+select title, length, count(*) from film where length < 100 group by title, length;
+select title, length, count(*) from film where length < 100 group by film_id;
+
